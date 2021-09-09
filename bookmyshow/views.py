@@ -4,6 +4,7 @@ from django.http.response import HttpResponseRedirect
 from django.contrib.sessions.models import Session
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
+from django.contrib import messages
 
 class profile:
     name:str
@@ -21,8 +22,9 @@ Anonymous = profile()
 # Create your views here.
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def login(request):
+    print('\n\n***login requested***\n\n')
     if request.session.has_key('is_logged'):
-        return render(request,'home.html',{'profile1':profile1})
+        return redirect('home')
     return render(request,'login.html')
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -34,6 +36,8 @@ def register(request):
             request.session['is_logged'] = True
             print('\n\n submited \n\n')
             return redirect('home')
+        else:
+            messages.error(request,'Invalid authentication...')
     return redirect('login')
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -45,8 +49,9 @@ def home(request):
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout_view(request):
-    print('Session deleted********************')
-    del request.session['is_logged']
+    if request.session.has_key('is_logged'):
+        print('\n\n***Session deleted***\n\n')
+        del request.session['is_logged']
     return redirect('login')
     
 

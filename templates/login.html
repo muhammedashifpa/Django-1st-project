@@ -10,9 +10,16 @@
 </head>
 <body>
     <section style="height:100vh; display:flex; align-items:center;">
-        <div class="" style="width: 500px; margin: auto">
+        <div class="p-3" style="width: 400px; margin: auto">
             <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+            {% endif %}
             <h2 class="text-center mb-3">Login</h2>
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Username</label>
@@ -22,8 +29,9 @@
                 <label for="formGroupExampleInput2" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Password">
             </div> 
-            <button type="submit" class="btn btn-primary float-end" style="width: 100px;">Login</button> 
+            <button type="submit" class="btn btn-primary m-auto" style="width: 100px; display:list-item">Login</button> 
             </form> 
+
         </div> 
     </section>
 
