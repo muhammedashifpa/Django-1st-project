@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Book my show</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Book my show</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Book now</a>
+              </li>
+            </ul>
+            <a class="navbar-brand" href="#">{{profile1.name}}</a>
+            <!-- <form action="{% url 'logout' %}" method="POST">
+              {% csrf_token %}
+              <button class="btn btn-outline-success" type="submit">Log out</button>
+            </form> -->
+            <a href="{% url 'logout' %}">Logout</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<main>
+    <section>
+        <div class="container mt-3">
+            <div class="row justify-content-evenly">
+            <div class="card col-sm-3" style="width: 16rem;">
+                <img src="https://images.unsplash.com/photo-1615986201152-7686a4867f30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=625&q=80" class="card-img-top pt-2" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <a href="#" class="btn btn-primary">Book now</a>
+                </div>
+              </div>
+              <div class="card col-sm-3" style="width: 16rem;">
+                <img src="https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" class="card-img-top pt-2" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <a href="#" class="btn btn-primary">Book now</a>
+                </div>
+              </div>
+              <div class="card col-sm-3" style="width: 16rem;">
+                <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top pt-2" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <a href="#" class="btn btn-primary">Book now</a>
+                </div>
+              </div>
+              <div class="card col-sm-3" style="width: 16rem;">
+                <img src="https://images.unsplash.com/photo-1616306240140-8e1bd25804d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" class="card-img-top pt-2" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <a href="#" class="btn btn-primary">Book now</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+</main>
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
